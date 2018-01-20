@@ -13,11 +13,27 @@ class StackTests: XCTestCase {
     }
 
     func testPop() {
-        // TODO: Fill in your test code here.
+		var stack = Stack<String>()
+		stack.push("1")
+		stack.push("2")
+		stack.push("3")
+		
+		let next = stack.pop()
+		XCTAssertEqual(next, "3", "The item is not poped correctly!")
+		
+		XCTAssertEqual(stack.toArray(), ["2", "1"], "The item is not poped correctly!")
     }
 
     func testPeek() {
-        // TODO: Fill in your test code here.
+		var stack = Stack<String>()
+		stack.push("1")
+		stack.push("2")
+		stack.push("3")
+		
+		let next = stack.peek()
+		XCTAssertEqual(next, "3", "The item is not peeked correctly!")
+		
+		XCTAssertEqual(stack.toArray(), ["3", "2", "1"], "The item should not be removed when peeked!")
     }
 
     func testCount() {
@@ -29,14 +45,28 @@ class StackTests: XCTestCase {
     }
 
     func testIsEmpty() {
-        // TODO: Fill in your test code here.
+		var stack = Stack<String>()
+		
+		XCTAssertEqual(stack.isEmpty, true, "TThe stack should be empty")
+		
+		stack.push("a")
+		XCTAssertEqual(stack.isEmpty, false, "The stack should not be empty!")
     }
 
     func testRemoveAll() {
-        // TODO: Fill in your test code here.
+		var stack = Stack<String>()
+		stack.push("1")
+		stack.push("2")
+		stack.push("3")
+		
+		stack.removeAll()
+		XCTAssertEqual(stack.isEmpty, true, "The stack should be empty after removing all elements!");
     }
 
     func testToArray() {
-        // TODO: Fill in your test code here.
+		var stack = Stack<String>()
+		let testArray = "abcdefgh".map { String ($0)}
+		testArray.forEach {stack.push($0)}
+		XCTAssertEqual(stack.toArray(), testArray.reversed(), "The queue is not converted to array correctly!");
     }
 }
