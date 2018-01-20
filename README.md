@@ -1,11 +1,11 @@
 CS3217 Problem Set 1
 ==
 
-**Name:** Your name
+**Name:** Joel Lim Jing
 
-**Matric No:** Your matric no
+**Matric No:** A0140036X
 
-**Tutor:** Your tutor's name
+**Tutor:** Wang Xien Dong
 
 ## Instructions for Students
 
