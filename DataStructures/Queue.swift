@@ -35,7 +35,7 @@ struct Queue<T> {
 
     /// Whether the queue is empty.
     var isEmpty: Bool {
-        return array.count == 0
+        return self.count == 0
     }
 
     /// Removes all elements in the queue.
