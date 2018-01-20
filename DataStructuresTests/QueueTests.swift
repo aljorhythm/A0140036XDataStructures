@@ -21,7 +21,7 @@ class QueueTests: XCTestCase {
 		let next = queue.dequeue()
 		XCTAssertEqual(next, "1", "The item is not dequeued correctly!")
 		
-		XCTAssertEqual(queue.toArray(), ["2", "3"], "The item is not enqueued correctly!")
+		XCTAssertEqual(queue.toArray(), ["2", "3"], "The item is not dequeued correctly!")
     }
 
     func testPeek() {
