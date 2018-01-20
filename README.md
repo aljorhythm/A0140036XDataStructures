@@ -22,7 +22,14 @@ CS3217 Problem Set 1
 
 ## Problem 1: Swift Collections
 
-Your answer here
+### Readings
+
+- [Hashable - Swift Standard Library | Apple Developer Documentation](https://developer.apple.com/documentation/swift/hashable)
+- [Dictionary - Swift Standard Library _ Apple Developer Documentation](https://developer.apple.com/documentation/swift/dictionary)
+
+### Answers
+
+If keys do not conform to Hashable protocol there is no standard to tell if two keys are equal. Keys can be of types that are not primitives like Integer or String, ie. they can be points on a plane, an object, etc. The implementation of Dictionary identifies keys by their .hashValue property.
 
 ## Problem 3: Graph Traversal
 
