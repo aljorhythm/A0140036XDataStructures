@@ -14,11 +14,15 @@ class StackTests: XCTestCase {
 
     func testPop() {
 		var stack = Stack<String>()
+		
+		var next = stack.pop()
+		XCTAssertEqual(next, nil, "There is no item to pop!")
+		
 		stack.push("1")
 		stack.push("2")
 		stack.push("3")
 		
-		let next = stack.pop()
+		next = stack.pop()
 		XCTAssertEqual(next, "3", "The item is not poped correctly!")
 		
 		XCTAssertEqual(stack.toArray(), ["2", "1"], "The item is not poped correctly!")

@@ -18,9 +18,9 @@ struct Stack<T> {
     }
 
     /// Removes the element at the top of the stack and return it.
-    /// - Returns: element at the top of the stack
+    /// - Returns: element at the top of the stack, nil if stack is empty
     mutating func pop() -> T? {
-        return array.removeFirst()
+		return count > 0 ? array.removeFirst() : nil
     }
 
     /// Returns, but does not remove, the element at the top of the stack.

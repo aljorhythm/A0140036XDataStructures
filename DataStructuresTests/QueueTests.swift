@@ -14,11 +14,15 @@ class QueueTests: XCTestCase {
 
     func testDequeue() {
 		var queue = Queue<String>()
+		
+		var next = queue.dequeue()
+		XCTAssertEqual(next, nil, "The queue should be empty!")
+		
 		queue.enqueue("1")
 		queue.enqueue("2")
 		queue.enqueue("3")
 		
-		let next = queue.dequeue()
+		next = queue.dequeue()
 		XCTAssertEqual(next, "1", "The item is not dequeued correctly!")
 		
 		XCTAssertEqual(queue.toArray(), ["2", "3"], "The item is not dequeued correctly!")

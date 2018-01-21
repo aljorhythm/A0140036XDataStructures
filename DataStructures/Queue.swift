@@ -17,9 +17,9 @@ struct Queue<T> {
     }
 
     /// Removes an element from the head of the queue and return it.
-    /// - Returns: item at the head of the queue
+    /// - Returns: item at the head of the queue, nil if queue is empty
     mutating func dequeue() -> T? {
-		return array.removeFirst()
+		return count > 0 ? array.removeFirst() : nil
     }
 
     /// Returns, but does not remove, the element at the head of the queue.
