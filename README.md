@@ -35,4 +35,23 @@ If keys do not conform to Hashable protocol there is no standard to tell if two 
 
 ## Problem 3.3
 
-Your answer here
+### Readings
+
+- [The Swift Programming Language (Swift 4.0.3): Error Handling](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html)
+- [error handling - Should a retrieval method return 'null' or throw an exception when it can't produce the return value? - Stack Overflow](https://stackoverflow.com/questions/175532/should-a-retrieval-method-return-null-or-throw-an-exception-when-it-cant-prod)
+
+### Answer
+
+We should throw an exception if it is truly an error (nil is unexpected). It is expected that there is an end to a queue or stack. 
+
+In Swift, using nil together with optional chainging makes it easier to read and write certain lines.
+
+```swift
+func fetchData() -> Data? {
+    if let data = try? fetchDataFromDisk() { return data }
+    if let data = try? fetchDataFromServer() { return data }
+    return nil
+}
+```
+
+But suppose it should always be possible to fetch data from disk then throwing an exception would be appropriate.
