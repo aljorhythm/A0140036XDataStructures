@@ -9,10 +9,10 @@
  */
 struct DepthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProtocol,
     Sequence where Value.Iterator.Element == Key {
-	
+
 	private var arranged: [Key]
 	private var iteratorIndex = -1
-	
+
 	/**
 	Depth first search algorithm
 	
@@ -20,16 +20,16 @@ struct DepthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProto
 	- Parameter subgraphRoot: subgraph root that is traversed
 	- Parameter arranged: Array of graph nodes arranged in depth first order. Nodes will be added in order by the recursive calls.
 	*/
-	static func dfs(_ graph: [Key: Value], subgraphRoot: Key, arranged: inout [Key]){
+	static func dfs(_ graph: [Key: Value], subgraphRoot: Key, arranged: inout [Key]) {
 		if !arranged.contains(subgraphRoot) {
 			arranged.append(subgraphRoot)
-			
+
 			if let children = graph[subgraphRoot] {
 				children.forEach { dfs( graph, subgraphRoot: $0, arranged: &arranged) }
 			}
 		}
 	}
-	
+
     /// Constructs a `DepthFirstOrderGenerator` with the given graph and start
     /// node.
     /// - Parameters:
@@ -39,11 +39,11 @@ struct DepthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProto
 		arranged = []
 		DepthFirstOrderGenerator.dfs(graph, subgraphRoot: start, arranged: &arranged)
 	}
-	
+
 	func makeIterator() -> DepthFirstOrderGenerator<Key, Value> {
 		return self
 	}
-	
+
 	/**
 	- Returns: nil if end of sequence
 	*/

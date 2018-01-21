@@ -7,9 +7,9 @@
  - Date: 2018
  */
 struct Queue<T> {
-	
+
 	var array: [T] = []
-	
+
     /// Adds an element to the tail of the queue.
     /// - Parameter item: The element to be added to the queue
     mutating func enqueue(_ item: T) {
@@ -19,7 +19,7 @@ struct Queue<T> {
     /// Removes an element from the head of the queue and return it.
     /// - Returns: item at the head of the queue, nil if queue is empty
     mutating func dequeue() -> T? {
-		return count > 0 ? array.removeFirst() : nil
+		return isEmpty ? nil : array.removeFirst()
     }
 
     /// Returns, but does not remove, the element at the head of the queue.
@@ -35,7 +35,7 @@ struct Queue<T> {
 
     /// Whether the queue is empty.
     var isEmpty: Bool {
-        return self.count == 0
+        return array.isEmpty
     }
 
     /// Removes all elements in the queue.

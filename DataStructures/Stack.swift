@@ -10,7 +10,7 @@ struct Stack<T> {
 
 	// element 0 is top of the stack, element length - 1 is bottom of stack
 	var array: [T] = []
-	
+
     /// Adds an element to the top of the stack.
     /// - Parameter item: The element to be added to the stack
     mutating func push(_ item: T) {
@@ -20,7 +20,7 @@ struct Stack<T> {
     /// Removes the element at the top of the stack and return it.
     /// - Returns: element at the top of the stack, nil if stack is empty
     mutating func pop() -> T? {
-		return count > 0 ? array.removeFirst() : nil
+		return isEmpty ? nil : array.removeFirst()
     }
 
     /// Returns, but does not remove, the element at the top of the stack.
@@ -36,7 +36,7 @@ struct Stack<T> {
 
     /// Whether the stack is empty.
     var isEmpty: Bool {
-		return self.count == 0
+		return array.isEmpty
     }
 
     /// Removes all elements in the stack.
