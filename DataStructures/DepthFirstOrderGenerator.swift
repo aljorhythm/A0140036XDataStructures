@@ -10,7 +10,7 @@
 struct DepthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProtocol,
     Sequence where Value.Iterator.Element == Key {
 	
-	 var arranged: [Key]
+	private var arranged: [Key]
 	private var iteratorIndex = -1
 	
 	/**
@@ -19,11 +19,14 @@ struct DepthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProto
 	static func dfs(_ graph: [Key: Value], subgraphRoot: Key, arranged: inout [Key]){
 		if !arranged.contains(subgraphRoot) {
 			arranged.append(subgraphRoot)
+			
+			if let children = graph[subgraphRoot] {
+				children.forEach { dfs( graph, subgraphRoot: $0, arranged: &arranged) }
+				return;
+			}
 		}
-		if let children = graph[subgraphRoot] {
-			children.forEach { dfs( graph, subgraphRoot: $0, arranged: &arranged) }
-			return;
-		}
+		
+		
 	}
 	
     /// Constructs a `DepthFirstOrderGenerator` with the given graph and start
