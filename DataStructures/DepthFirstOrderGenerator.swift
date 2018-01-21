@@ -18,7 +18,8 @@ struct DepthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProto
 	
 	- Parameter graph: Adjacency list representation of entire graph
 	- Parameter subgraphRoot: subgraph root that is traversed
-	- Parameter arranged: Array of graph nodes arranged in depth first order. Nodes will be added in order by the recursive calls.
+	- Parameter arranged: Array of graph nodes arranged in depth first order.
+	Nodes will be added in order by the recursive calls.
 	*/
 	static func dfs(_ graph: [Key: Value], subgraphRoot: Key, arranged: inout [Key]) {
 		if !arranged.contains(subgraphRoot) {
