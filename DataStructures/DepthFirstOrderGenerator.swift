@@ -26,7 +26,6 @@ struct DepthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProto
 			
 			if let children = graph[subgraphRoot] {
 				children.forEach { dfs( graph, subgraphRoot: $0, arranged: &arranged) }
-				return;
 			}
 		}
 	}
@@ -45,6 +44,9 @@ struct DepthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProto
 		return self
 	}
 	
+	/**
+	- Returns: nil if end of sequence
+	*/
 	mutating func next() -> Key? {
 		iteratorIndex += 1
 		return iteratorIndex < arranged.count ? arranged[iteratorIndex] : nil
