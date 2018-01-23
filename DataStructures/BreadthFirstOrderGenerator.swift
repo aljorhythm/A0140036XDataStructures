@@ -28,8 +28,10 @@ struct BreadthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorPro
 				}
 			}
 		}
+        // TA: Tip: you can use for ... in ... where (condition) to make your code more compact.
 
 		print(visitingQueue)
+        // [-1] Style: unncessary print statement.
 
 		while let nextRoot = visitingQueue.dequeue() {
 			bfs(graph, subgraphRoot: nextRoot, arranged: &arranged, visitingQueue: &visitingQueue)
@@ -43,6 +45,7 @@ struct BreadthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorPro
     ///   - start: The start node.
     init?(graph: [Key: Value], start: Key) {
 		arranged = []
+        // [-1] style: should instantiate at the properties instead of init.
 		var visitingQueue = Queue<Key>()
 		BreadthFirstOrderGenerator.bfs(graph, subgraphRoot: start, arranged: &arranged, visitingQueue: &visitingQueue)
     }

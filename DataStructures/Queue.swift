@@ -9,6 +9,7 @@
 struct Queue<T> {
 
 	var array: [T] = []
+    // [-1] Style - for not keeping array private.
 
     /// Adds an element to the tail of the queue.
     /// - Parameter item: The element to be added to the queue
