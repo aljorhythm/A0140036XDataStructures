@@ -21,19 +21,20 @@ struct DepthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProto
 	- Parameter arranged: Array of graph nodes arranged in depth first order.
 	Nodes will be added in order by the recursive calls.
 	*/
-	static func dfs(_ graph: [Key: Value], subgraphRoot: Key, arranged: inout [Key]) {
-		if !arranged.contains(subgraphRoot) {
-            // [-1] styling: prefer guard statement.
-
-			arranged.append(subgraphRoot)
-
-			if let children = graph[subgraphRoot] {
-				children.forEach { dfs( graph, subgraphRoot: $0, arranged: &arranged) }
-                // [-1] Styling:       ^ unnecessary space in method call.
-			}
-            // [-1] Styling: Prefer guard statement.
+	static func dfs(_ graph: [Key: Value], subgraphRoot: Key) -> [Key]{
+		var arranged = [Key]()
+		dfs(graph, subgraphRoot: subgraphRoot, arranged: &arranged)
+		return arranged
+	}
+	
+	private static func dfs(_ graph: [Key: Value], subgraphRoot: Key, arranged: inout [Key]) {
+		guard !arranged.contains(subgraphRoot) else {
+			return
 		}
-        // TA: Having guard statements will avoid unnecessary nested calls.
+		arranged.append(subgraphRoot)
+		if let children = graph[subgraphRoot] {
+			children.forEach { dfs(graph, subgraphRoot: $0, arranged: &arranged) }
+		}
 	}
 
     /// Constructs a `DepthFirstOrderGenerator` with the given graph and start
@@ -42,10 +43,7 @@ struct DepthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProto
     ///   - graph: A dictionary of node to adjacency list pairs.
     ///   - start: The start node.
 	init?(graph: [Key: Value], start: Key) {
-		arranged = []
-        // [-0] style: should instantiate at the properties instead of init.
-        // Will become problematic when we have multiple constructors.
-		DepthFirstOrderGenerator.dfs(graph, subgraphRoot: start, arranged: &arranged)
+		arranged = DepthFirstOrderGenerator.dfs(graph, subgraphRoot: start)
 	}
 
 	func makeIterator() -> DepthFirstOrderGenerator<Key, Value> {

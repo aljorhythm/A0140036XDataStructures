@@ -9,8 +9,7 @@
 struct Stack<T> {
 
 	// element 0 is top of the stack, element length - 1 is bottom of stack
-	var array: [T] = []
-    // [-0] Style - for not keeping array private.
+	private var array: [T] = []
 
     /// Adds an element to the top of the stack.
     /// - Parameter item: The element to be added to the stack
