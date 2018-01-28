@@ -7,7 +7,8 @@
  - Authors: CS3217
  - Date: 2018
  */
-struct DepthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProtocol,
+
+public struct DepthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProtocol,
     Sequence where Value.Iterator.Element == Key {
 
 	private var arranged: [Key]
@@ -21,7 +22,7 @@ struct DepthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProto
 	- Parameter arranged: Array of graph nodes arranged in depth first order.
 	Nodes will be added in order by the recursive calls.
 	*/
-	static func dfs(_ graph: [Key: Value], subgraphRoot: Key) -> [Key] {
+	public static func dfs(_ graph: [Key: Value], subgraphRoot: Key) -> [Key] {
 		var arranged = [Key]()
 		dfs(graph, subgraphRoot: subgraphRoot, arranged: &arranged)
 		return arranged
@@ -42,18 +43,18 @@ struct DepthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProto
     /// - Parameters:
     ///   - graph: A dictionary of node to adjacency list pairs.
     ///   - start: The start node.
-	init?(graph: [Key: Value], start: Key) {
+	public init?(graph: [Key: Value], start: Key) {
 		arranged = DepthFirstOrderGenerator.dfs(graph, subgraphRoot: start)
 	}
 
-	func makeIterator() -> DepthFirstOrderGenerator<Key, Value> {
+	public func makeIterator() -> DepthFirstOrderGenerator<Key, Value> {
 		return self
 	}
 
 	/**
 	- Returns: nil if end of sequence
 	*/
-	mutating func next() -> Key? {
+	public mutating func next() -> Key? {
 		iteratorIndex += 1
 		return iteratorIndex < arranged.count ? arranged[iteratorIndex] : nil
 	}

@@ -7,7 +7,8 @@
  - Authors: CS3217
  - Date: 2018
  */
-struct BreadthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProtocol,
+
+public struct BreadthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProtocol,
     Sequence where Value.Iterator.Element == Key {
 
 	private var arranged: [Key]
@@ -16,7 +17,7 @@ struct BreadthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorPro
 	/**
 		Breadth First Order algorithm
 	*/
-	static func bfs(_ graph: [Key: Value], subgraphRoot: Key) -> [Key] {
+	public static func bfs(_ graph: [Key: Value], subgraphRoot: Key) -> [Key] {
 		var visitingQueue = Queue<Key>()
 		var arranged = [Key]()
 		bfs(graph, subgraphRoot: subgraphRoot, arranged: &arranged, visitingQueue: &visitingQueue)
@@ -50,14 +51,14 @@ struct BreadthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorPro
 		arranged = BreadthFirstOrderGenerator.bfs(graph, subgraphRoot: start)
     }
 
-    func makeIterator() -> BreadthFirstOrderGenerator<Key, Value> {
+    public func makeIterator() -> BreadthFirstOrderGenerator<Key, Value> {
         return self
     }
 
 	/**
 	- Returns: nil if end of sequence
 	*/
-    mutating func next() -> Key? {
+    public mutating func next() -> Key? {
 		iteratorIndex += 1
 		return arranged.count > iteratorIndex ? arranged[iteratorIndex] : nil
     }
