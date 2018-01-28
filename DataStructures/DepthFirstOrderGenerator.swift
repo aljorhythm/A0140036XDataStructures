@@ -21,12 +21,12 @@ struct DepthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProto
 	- Parameter arranged: Array of graph nodes arranged in depth first order.
 	Nodes will be added in order by the recursive calls.
 	*/
-	static func dfs(_ graph: [Key: Value], subgraphRoot: Key) -> [Key]{
+	static func dfs(_ graph: [Key: Value], subgraphRoot: Key) -> [Key] {
 		var arranged = [Key]()
 		dfs(graph, subgraphRoot: subgraphRoot, arranged: &arranged)
 		return arranged
 	}
-	
+
 	private static func dfs(_ graph: [Key: Value], subgraphRoot: Key, arranged: inout [Key]) {
 		guard !arranged.contains(subgraphRoot) else {
 			return

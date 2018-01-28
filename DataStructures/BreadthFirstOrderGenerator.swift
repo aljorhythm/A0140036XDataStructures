@@ -10,26 +10,26 @@
 struct BreadthFirstOrderGenerator<Key: Hashable, Value: Collection>: IteratorProtocol,
     Sequence where Value.Iterator.Element == Key {
 
-	private var arranged : [Key]
+	private var arranged: [Key]
 	private var iteratorIndex = -1
 
 	/**
 		Breadth First Order algorithm
 	*/
-	static func bfs(_ graph: [Key:Value], subgraphRoot: Key) -> [Key]{
+	static func bfs(_ graph: [Key: Value], subgraphRoot: Key) -> [Key] {
 		var visitingQueue = Queue<Key>()
 		var arranged = [Key]()
 		bfs(graph, subgraphRoot: subgraphRoot, arranged: &arranged, visitingQueue: &visitingQueue)
 		return arranged
 	}
-	
+
 	private static func bfs(_ graph: [Key: Value], subgraphRoot: Key, arranged: inout [Key], visitingQueue: inout Queue<Key>) {
 		if !arranged.contains(subgraphRoot) {
 			arranged.append(subgraphRoot)
 		}
-		
+
 		if let children = graph[subgraphRoot] {
-			for childNode in children  {
+			for childNode in children {
 				if !arranged.contains(childNode) {
 					visitingQueue.enqueue(childNode)
 				}
