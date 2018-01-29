@@ -116,7 +116,7 @@ public struct BreadthFirstOrderGenerator<Key: Hashable, Value: Collection>: Iter
     /// - Parameters:
     ///   - graph: A dictionary of node to adjacency list pairs.
     ///   - start: The start node.
-    init?(graph: Graph, start: Key) {
+    public init?(graph: Graph, start: Key) {
 		arranged = BreadthFirstOrderGenerator.bfs(graph, subgraphRoot: start)
     }
 
@@ -126,7 +126,7 @@ public struct BreadthFirstOrderGenerator<Key: Hashable, Value: Collection>: Iter
 	///   - graph: A dictionary of node to adjacency list pairs.
 	///   - start: The start node.
 	///	  - end: The end node
-	init?(graph: Graph, start: Key, end: Key) {
+	public init?(graph: Graph, start: Key, end: Key) {
 		let bfs = BfsShortestPath(graph: graph, start: start, end: end)
 		arranged = bfs.shortestPath ?? []
 	}
