@@ -120,12 +120,14 @@ public struct BreadthFirstOrderGenerator<Key: Hashable, Value: Collection>: Iter
 		arranged = BreadthFirstOrderGenerator.bfs(graph, subgraphRoot: start)
     }
 
-	/// Constructs a `BreadthFirstOrderGenerator` with the given graph, start
+	/// Constructs a shortest `BreadthFirstOrderGenerator` with the given graph, start
 	/// node and end node.
 	/// - Parameters:
 	///   - graph: A dictionary of node to adjacency list pairs.
 	///   - start: The start node.
 	///	  - end: The end node
+	/// - Returns:
+	/// 	Shortest path from start node to end node
 	public init?(graph: Graph, start: Key, end: Key) {
 		let bfs = BfsShortestPath(graph: graph, start: start, end: end)
 		arranged = bfs.shortestPath ?? []
