@@ -25,6 +25,8 @@
 		765CFB9A1C37DE7600FA2E0E /* graph_cycle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DD36A2E1A60E90800746BF6 /* graph_cycle.plist */; };
 		765CFB9B1C37DE7600FA2E0E /* graph_example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DD36A301A60E90800746BF6 /* graph_example.plist */; };
 		765CFBA01C4BEAD400FA2E0E /* graph_empty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 765CFB9D1C4BEA0100FA2E0E /* graph_empty.plist */; };
+		FEC16464201E7C8E00E35747 /* graph_simple_bfs_shortest.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEC16463201E7C8E00E35747 /* graph_simple_bfs_shortest.plist */; };
+		FEC16465201E7EAB00E35747 /* graph_simple_bfs_shortest.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEC16463201E7C8E00E35747 /* graph_simple_bfs_shortest.plist */; };
 		FEF883212014ED3500C3A1F1 /* graph_linkedlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEF8831F2014EB6600C3A1F1 /* graph_linkedlist.plist */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,7 @@
 		6DD36A2E1A60E90800746BF6 /* graph_cycle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = graph_cycle.plist; sourceTree = "<group>"; };
 		6DD36A301A60E90800746BF6 /* graph_example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = graph_example.plist; sourceTree = "<group>"; };
 		765CFB9D1C4BEA0100FA2E0E /* graph_empty.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = graph_empty.plist; sourceTree = "<group>"; };
+		FEC16463201E7C8E00E35747 /* graph_simple_bfs_shortest.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = graph_simple_bfs_shortest.plist; sourceTree = "<group>"; };
 		FEF8831F2014EB6600C3A1F1 /* graph_linkedlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = graph_linkedlist.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +150,7 @@
 				6DD36A301A60E90800746BF6 /* graph_example.plist */,
 				765CFB9D1C4BEA0100FA2E0E /* graph_empty.plist */,
 				413DC0731A5F62C300CC4AC3 /* Info.plist */,
+				FEC16463201E7C8E00E35747 /* graph_simple_bfs_shortest.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -237,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				765CFBA01C4BEAD400FA2E0E /* graph_empty.plist in Resources */,
+				FEC16465201E7EAB00E35747 /* graph_simple_bfs_shortest.plist in Resources */,
 				765CFB9A1C37DE7600FA2E0E /* graph_cycle.plist in Resources */,
 				765CFB9B1C37DE7600FA2E0E /* graph_example.plist in Resources */,
 				FEF883212014ED3500C3A1F1 /* graph_linkedlist.plist in Resources */,
@@ -250,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEC16464201E7C8E00E35747 /* graph_simple_bfs_shortest.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
