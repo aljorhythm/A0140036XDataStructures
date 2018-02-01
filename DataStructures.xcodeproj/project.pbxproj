@@ -25,6 +25,10 @@
 		765CFB9A1C37DE7600FA2E0E /* graph_cycle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DD36A2E1A60E90800746BF6 /* graph_cycle.plist */; };
 		765CFB9B1C37DE7600FA2E0E /* graph_example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DD36A301A60E90800746BF6 /* graph_example.plist */; };
 		765CFBA01C4BEAD400FA2E0E /* graph_empty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 765CFB9D1C4BEA0100FA2E0E /* graph_empty.plist */; };
+		FEC16464201E7C8E00E35747 /* graph_simple_bfs_shortest.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEC16463201E7C8E00E35747 /* graph_simple_bfs_shortest.plist */; };
+		FEC16465201E7EAB00E35747 /* graph_simple_bfs_shortest.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEC16463201E7C8E00E35747 /* graph_simple_bfs_shortest.plist */; };
+		FEC7416B2022562E00348B60 /* BreadthFirstShortestPathGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC7416A2022562E00348B60 /* BreadthFirstShortestPathGeneratorTests.swift */; };
+		FEC7416D2022567F00348B60 /* BreadthFirstShortestPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC7416C2022567F00348B60 /* BreadthFirstShortestPathGenerator.swift */; };
 		FEF883212014ED3500C3A1F1 /* graph_linkedlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEF8831F2014EB6600C3A1F1 /* graph_linkedlist.plist */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +65,9 @@
 		6DD36A2E1A60E90800746BF6 /* graph_cycle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = graph_cycle.plist; sourceTree = "<group>"; };
 		6DD36A301A60E90800746BF6 /* graph_example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = graph_example.plist; sourceTree = "<group>"; };
 		765CFB9D1C4BEA0100FA2E0E /* graph_empty.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = graph_empty.plist; sourceTree = "<group>"; };
+		FEC16463201E7C8E00E35747 /* graph_simple_bfs_shortest.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = graph_simple_bfs_shortest.plist; sourceTree = "<group>"; };
+		FEC7416A2022562E00348B60 /* BreadthFirstShortestPathGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreadthFirstShortestPathGeneratorTests.swift; sourceTree = "<group>"; };
+		FEC7416C2022567F00348B60 /* BreadthFirstShortestPathGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreadthFirstShortestPathGenerator.swift; sourceTree = "<group>"; };
 		FEF8831F2014EB6600C3A1F1 /* graph_linkedlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = graph_linkedlist.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +110,7 @@
 		413DC05B1A5F62C300CC4AC3 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				FEC7416C2022567F00348B60 /* BreadthFirstShortestPathGenerator.swift */,
 				413DC0801A5F62D300CC4AC3 /* Queue.swift */,
 				413DC0811A5F62D300CC4AC3 /* Stack.swift */,
 				413DC07E1A5F62D300CC4AC3 /* BreadthFirstOrderGenerator.swift */,
@@ -129,6 +137,7 @@
 		413DC0711A5F62C300CC4AC3 /* DataStructuresTests */ = {
 			isa = PBXGroup;
 			children = (
+				FEC7416A2022562E00348B60 /* BreadthFirstShortestPathGeneratorTests.swift */,
 				413DC0971A5FD43300CC4AC3 /* QueueTests.swift */,
 				413DC08A1A5F62DE00CC4AC3 /* StackTests.swift */,
 				413DC08F1A5F660D00CC4AC3 /* BreadthFirstOrderGeneratorTests.swift */,
@@ -147,6 +156,7 @@
 				6DD36A301A60E90800746BF6 /* graph_example.plist */,
 				765CFB9D1C4BEA0100FA2E0E /* graph_empty.plist */,
 				413DC0731A5F62C300CC4AC3 /* Info.plist */,
+				FEC16463201E7C8E00E35747 /* graph_simple_bfs_shortest.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -237,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				765CFBA01C4BEAD400FA2E0E /* graph_empty.plist in Resources */,
+				FEC16465201E7EAB00E35747 /* graph_simple_bfs_shortest.plist in Resources */,
 				765CFB9A1C37DE7600FA2E0E /* graph_cycle.plist in Resources */,
 				765CFB9B1C37DE7600FA2E0E /* graph_example.plist in Resources */,
 				FEF883212014ED3500C3A1F1 /* graph_linkedlist.plist in Resources */,
@@ -250,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEC16464201E7C8E00E35747 /* graph_simple_bfs_shortest.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +292,7 @@
 				413DC0841A5F62D300CC4AC3 /* DepthFirstOrderGenerator.swift in Sources */,
 				413DC0821A5F62D300CC4AC3 /* BreadthFirstOrderGenerator.swift in Sources */,
 				413DC0951A5FC44E00CC4AC3 /* Dictionary+Traversable.swift in Sources */,
+				FEC7416D2022567F00348B60 /* BreadthFirstShortestPathGenerator.swift in Sources */,
 				413DC0611A5F62C300CC4AC3 /* ViewController.swift in Sources */,
 				413DC0881A5F62D300CC4AC3 /* Stack.swift in Sources */,
 				413DC05F1A5F62C300CC4AC3 /* AppDelegate.swift in Sources */,
@@ -290,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEC7416B2022562E00348B60 /* BreadthFirstShortestPathGeneratorTests.swift in Sources */,
 				413DC08B1A5F62DE00CC4AC3 /* StackTests.swift in Sources */,
 				412A0AA91A5FDEB5002B6B25 /* Dictionary+TraversableTests.swift in Sources */,
 				412A0AAB1A5FDFAA002B6B25 /* DepthFirstOrderGeneratorTests.swift in Sources */,

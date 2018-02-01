@@ -29,7 +29,7 @@ class Dictionary_TraversableTests: XCTestCase {
 
         let bfsNodes = graph.nodesSequenceInBreadthFirstOrderFromNode(nodeA)
         XCTAssertEqual(bfsNodes, ["A", "B", "C", "E", "D", "F", "G"],
-            "The bfs for \(graphFileName) from \(nodeA) is wrong!")
+                       "The bfs for \(graphFileName) from \(nodeA) is wrong!")
 
         guard var dfsGenerator = graph.depthFirstOrderGeneratorFromNode(nodeA) else {
             XCTFail("Initialisation of dfs generator should succeed.")
@@ -47,7 +47,7 @@ class Dictionary_TraversableTests: XCTestCase {
 
         let dfsNodes = graph.nodesSequenceInDepthFirstOrderFromNode(nodeA)
         XCTAssertEqual(dfsNodes, ["A", "B", "D", "F", "E", "C", "G"],
-            "The dfs for \(graphFileName) from \(nodeA) is wrong!")
+                       "The dfs for \(graphFileName) from \(nodeA) is wrong!")
     }
 
     private func getGraph(_ fileName: String) -> NSDictionary {
