@@ -63,7 +63,6 @@ Sequence where Value.Iterator.Element == Key {
 
     private mutating func bfsShortestPath(pathTo: PathTo) {
         let hasVisited = arranged.contains(pathTo.key)
-		print("arranged \(arranged)")
 
         var currentShortestPathLength: Int
 		
@@ -73,10 +72,8 @@ Sequence where Value.Iterator.Element == Key {
             currentShortestPathLength = Int.max
         }
 
-		print("\(end) \(pathTo.key) \(pathTo) \(end == pathTo.key) current shortest path length \(pathTo.path.count) < \(currentShortestPathLength)")
         if end == pathTo.key {
             self.shortestPath = pathTo.path.count < currentShortestPathLength ? pathTo.path : shortestPath
-			print("shortest \(pathTo.path.count < currentShortestPathLength) \(shortestPath)")
             return
         }
 
@@ -110,7 +107,6 @@ Sequence where Value.Iterator.Element == Key {
 			assertionFailure("shortestPath cannot be nil")
 			return nil
 		}
-		print(shortestPath)
         iteratorIndex += 1
 		guard iteratorIndex < shortestPath.count else {
 			return nil
