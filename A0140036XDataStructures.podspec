@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "A0140036XDataStructures"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Data structures implemented in PS1"
 
   # This description is used to generate tags and improve search results.
