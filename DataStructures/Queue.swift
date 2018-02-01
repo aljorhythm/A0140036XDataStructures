@@ -8,29 +8,29 @@
  */
 public struct Queue<T> {
 
-	private var array: [T] = []
+    private var array: [T] = []
 
     /// Adds an element to the tail of the queue.
     /// - Parameter item: The element to be added to the queue
     public mutating func enqueue(_ item: T) {
-		array.append(item)
+        array.append(item)
     }
 
     /// Removes an element from the head of the queue and return it.
     /// - Returns: item at the head of the queue, nil if queue is empty
     public mutating func dequeue() -> T? {
-		return isEmpty ? nil : array.removeFirst()
+        return isEmpty ? nil : array.removeFirst()
     }
 
     /// Returns, but does not remove, the element at the head of the queue.
     /// - Returns: item at the head of the queue
     public func peek() -> T? {
-         return array.first
+        return array.first
     }
 
     /// The number of elements currently in the queue.
     public var count: Int {
-         return array.count
+        return array.count
     }
 
     /// Whether the queue is empty.
@@ -40,7 +40,7 @@ public struct Queue<T> {
 
     /// Removes all elements in the queue.
     public mutating func removeAll() {
-		array.removeAll()
+        array.removeAll()
     }
 
     /// Returns an array of the elements in their respective dequeue order, i.e.

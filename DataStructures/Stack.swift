@@ -8,19 +8,19 @@
  */
 public struct Stack<T> {
 
-	// element 0 is top of the stack, element length - 1 is bottom of stack
-	private var array: [T] = []
+    // element 0 is top of the stack, element length - 1 is bottom of stack
+    private var array: [T] = []
 
     /// Adds an element to the top of the stack.
     /// - Parameter item: The element to be added to the stack
     public mutating func push(_ item: T) {
-		array.insert(item, at: 0)
+        array.insert(item, at: 0)
     }
 
     /// Removes the element at the top of the stack and return it.
     /// - Returns: element at the top of the stack, nil if stack is empty
     public mutating func pop() -> T? {
-		return isEmpty ? nil : array.removeFirst()
+        return isEmpty ? nil : array.removeFirst()
     }
 
     /// Returns, but does not remove, the element at the top of the stack.
@@ -36,12 +36,12 @@ public struct Stack<T> {
 
     /// Whether the stack is empty.
     public var isEmpty: Bool {
-		return array.isEmpty
+        return array.isEmpty
     }
 
     /// Removes all elements in the stack.
     public mutating func removeAll() {
-		array.removeAll()
+        array.removeAll()
     }
 
     /// Returns an array of the elements in their respective pop order, i.e.
