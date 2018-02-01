@@ -41,7 +41,7 @@ Sequence where Value.Iterator.Element == Key {
 		Finds a shortest path from one node to another in a graph.
 		Fails if either start or end is not in graph
      */
-    init?(graph: Graph, start: Key, end: Key) {
+    public init?(graph: Graph, start: Key, end: Key) {
         self.start = start
         self.end = end
         self.graph = graph
